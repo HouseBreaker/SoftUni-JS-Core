@@ -1,0 +1,17 @@
+<input type="text" id="num1" /> +
+<input type="text" id="num2" /> =
+<input type="text" id="sum" readonly="readonly" />
+<input type="button" value="Calc" onclick="calc()" />
+<script>
+	function calc() {
+		console.log('executed!');
+		let num1 = Number(document.querySelector('#num1').value);
+		let num2 = Number(document.querySelector('#num2').value);
+
+		console.log([num1, num2]);
+
+		let sum = num1 + num2;
+
+		document.querySelector('#sum').value = sum.toString();
+	}
+</script>

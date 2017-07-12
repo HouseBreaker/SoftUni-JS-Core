@@ -1,0 +1,15 @@
+<ul id="items">
+	<li>first item</li>
+	<li>second item</li>
+	<li>third item</li>
+</ul>
+<textarea id="result"></textarea>
+<br>
+<button onclick="extractText()">Extract Text</button>
+<script>
+	function extractText() {
+		let items = [...document.querySelectorAll('#items li')].map(a => a.textContent);
+
+		document.querySelector('#result').textContent += items.join('\n') + '\n';
+	}
+</script>

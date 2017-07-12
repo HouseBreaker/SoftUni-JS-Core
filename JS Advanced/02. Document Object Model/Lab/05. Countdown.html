@@ -1,0 +1,22 @@
+<input type="text" id="time" style="border:3px solid blue; text-align:center; font-size:2em;" disabled/>
+<script>
+	function countdown(number) {
+		let timeElement = document.querySelector('#time');
+		let time = number;
+
+		let interval = setInterval(decrement, 1000);
+
+		function decrement() {
+			time--;
+
+			let minutes = Math.trunc(time / 60);
+			let seconds = ('0' + (time % 60)).slice(-2);
+
+			timeElement.value = `${minutes}:${seconds}`;
+		}
+	}
+
+	window.onload = function () {
+		countdown(550);
+	}
+</script>
